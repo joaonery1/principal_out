@@ -4,38 +4,33 @@
 <head>
     <meta charset="UTF-8">
     <title>Formulário</title>
-    <link rel="stylesheet" href="/app/templates/style.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
 
 <body>
-    <fieldset>
-        <div class="topo">
-            <h1>Cadastro</h1>
-        </div>
+    <div class="col-8 m-auto pt-2 pb-2 text-center">
+        <h1>Cadastro</h1>
+    </div>
 
-        <div class="col-8 m-auto pt-3 pb-2 text-center">
-            <a href="/" class="btn btn-info">Voltar</a>
-        </div>
+    <div class="col-8 m-auto pt-3 pb-2 text-center">
+        <a href="/" class="btn btn-info">Voltar</a>
+    </div>
 
-        <legend><b>Cadastro</b></legend> 
-        <br>
-
+    <div class="col-8 m-auto pt-4 pb-2 text-center">
         <div class="col-8 m-auto pt-4 pb-2 text-center">
-            <div class="col-8 m-auto pt-4 pb-2 text-center">
-                <form name="form" id="form" action="/create/" method="post">
-                    {% csrf_token %}
-                    <!--{{form.as_p}}-->
-                    <div class="form-group mt-4">Nome: {{form.nome}}</div>
-                    <div class="form-group mt-4">Duracao: {{form.duracao}}</div>
-                    <div class="form-group mt-4">Ano: {{form.ano}}</div>
-                    <div class="form-group mt-4">Produtor: {{form.produtor}}</div>
-                    <div class="form-group mt-4">Diretor: {{form.diretor}}</div>
-                    <div class="form-group mt-4">Elenco: {{form.elenco}}</div>
-                    <div class="form-group mt-4">Direcao: {{form.direcao}}</div>
-                    <input type="submit" class="btn btn-success" value="Salvar">
-                </form>
-            </div>
+            <form name="form" id="form" action="{% if db %}/update/{{db.id}}/{%else%}/create/{% endif %}" method="post">
+                {% csrf_token %}
+                <!--{{form.as_p}}-->
+                <div class="form-group mt-4">Nome: {{form.nome}}</div>
+                <div class="form-group mt-4">Duracao: {{form.duracao}}</div>
+                <div class="form-group mt-4">Ano: {{form.ano}}</div>
+                <div class="form-group mt-4">Produtor: {{form.produtor}}</div>
+                <div class="form-group mt-4">Diretor: {{form.diretor}}</div>
+                <div class="form-group mt-4">Elenco: {{form.elenco}}</div>
+                <div class="form-group mt-4">Direcao: {{form.direcao}}</div>
+                <input type="submit" class="btn btn-success" value="Salvar">
+            </form>
         </div>
-</fieldset>
+    </div>
 </body>
 </html>
