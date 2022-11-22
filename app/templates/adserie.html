@@ -7,27 +7,52 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
 
-<body>
-    <div class="col-8 m-auto pt-2 pb-2 text-center">
-        <h1>Cadastro</h1>
-    </div>
+<style>
+    fieldset{
+        border: 5px solid;
+        padding: 30px;
+        width:30%;
+        height: 80%;
+        position:absolute;
+        align-content: center;
 
-    <div class="col-8 m-auto pt-3 pb-2 text-center">
-        <a href="/" class="btn btn-info">Voltar</a>
-    </div>
+    }
+
+    legend{
+        border: 2px solid;
+        padding: 5px;
+        font-size:large;
+        font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+    }
+
+    #formulario label{
+        position:absolute;
+        left: 10px;
+        margin-right:10px;
+
+    }
+</style>
+
+<body>
+    <fieldset>
+        <legend><b>Cadastrar Serie</b></legend>
     
     <div class="col-8 m-auto pt-4 pb-2 text-center">
         <div class="col-8 m-auto pt-4 pb-2 text-center">
             <form name="form" id="form" action="/createSerie/" method="post">
                 {% csrf_token %}
                 <!--{{form.as_p}}-->
-                <div class="form-group mt-4">Nome: {{formSerie.nomeSerie}}</div>
-                <div class="form-group mt-4">Numero de eps: {{formSerie.numEp}}</div>
-                <div class="form-group mt-4">Numero de temp: {{formSerie.numTemp}}</div>
-                <div class="form-group mt-4">Nome da produtora: {{formSerie.produtoraSerie}}</div>
-                <input type="submit" class="btn btn-success" value="Salvar">
+                <label class="form-group mt-4" id="formulario">Nome: {{formSerie.nomeSerie}}</label><br>
+                <label class="form-group mt-4" id="formulario">Numero de eps: {{formSerie.numEp}}</label><br>
+                <label class="form-group mt-4" id="formulario">Numero de temp: {{formSerie.numTemp}}</label><br>
+                <label class="form-group mt-4" id="formulario">Nome da produtora: {{formSerie.produtoraSerie}}</label>
+                <input type="submit" class="btn btn-success" value="Salvar" style=" border:1px solid; padding: 11px 21px; vertical-align: middle; background:#2D888F; color:white;border-radius:6px; font-size: 20px; font-family:helvetica, serif;text-decoration:none;">
+                <div class="col-8 m-auto pt-3 pb-2 text-center">
+                    <a href="/" class="btn btn-info" style=" border:1px solid; padding: 11px 21px; vertical-align: middle; background:#2D888F; color:white;border-radius:6px; font-size: 20px; font-family:helvetica, serif;text-decoration:none;">Voltar</a>
+                </div>
             </form>
         </div>
     </div>
+</fieldset>
 </body>
 </html>
