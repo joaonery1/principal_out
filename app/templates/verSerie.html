@@ -13,7 +13,7 @@
     </div>
 
     <div class="col-8 m-auto pt-3 pb-2 text-center">
-        <a href="/form" class="btn btn-success">Adicionar</a>
+        <a href="/formSerie" class="btn btn-success">Adicionar</a>
     </div>
 
     <div class="col-8 m-auto pt-4 pb-2 text-center">
@@ -28,16 +28,16 @@
           </thead>
           
           <tbody>
-            {% for dbs in db %}
+            {% for dbs in db1 %}
             <tr>
-              <td>{{dbs.id}}</td>
-              <td>{{dbs.nome}}</td>
-              <td>{{dbs.diretor}}</td>
-              <td>{{dbs.ano}}</td>
+              <td>{{dbs.nomeSerie}}</td>
+              <td>{{dbs.numEp}}</td>
+              <td>{{dbs.numTemp}}</td>
+              <td>{{dbs.produtoraSerie}}</td>
               <td>
-                <a href="/view/{{dbs.id}}/" class="btn btn-dark">Visualizar</a>
-                <a href="/edit/{{dbs.id}}/" class="btn btn-primary">Editar</a>
-                <a href="/delete/{{dbs.id}}/" class="btn btn-danger">Deletar</a>
+                <a href="/viewSerie/{{dbs.id}}/" class="btn btn-dark">Visualizar</a>
+                <a href="/editSerie/{{dbs.id}}/" class="btn btn-primary">Editar</a>
+                <a href="/deleteSerie/{{dbs.id}}/" class="btn btn-danger">Deletar</a>
               </td>
             </tr>
             {% endfor %}
