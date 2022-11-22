@@ -3,20 +3,17 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Outsider Videos</title>
+    <title>CRUD com Python</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
 
 <body>
     <div class="col-8 m-auto pt-2 pb-2 text-center">
-        <h1>Outsider Videos</h1>
+        <h1>Crud com Python</h1>
     </div>
 
     <div class="col-8 m-auto pt-3 pb-2 text-center">
-<<<<<<< HEAD
-        <a href="/form" class="btn btn-success">Pagina Inicial</a>
-=======
-        <a href="/form" class="btn btn-success">Adicionar</a>
+        <a href="/formSerie" class="btn btn-success">Adicionar</a>
     </div>
 
     <div class="col-8 m-auto pt-4 pb-2 text-center">
@@ -31,23 +28,22 @@
           </thead>
           
           <tbody>
-            {% for dbs in db %}
+            {% for dbs in db1 %}
             <tr>
-              <td>{{dbs.id}}</td>
-              <td>{{dbs.nome}}</td>
-              <td>{{dbs.diretor}}</td>
-              <td>{{dbs.ano}}</td>
+              <td>{{dbs.nomeSerie}}</td>
+              <td>{{dbs.numEp}}</td>
+              <td>{{dbs.numTemp}}</td>
+              <td>{{dbs.produtoraSerie}}</td>
               <td>
-                <a href="/view/{{dbs.id}}/" class="btn btn-dark">Visualizar</a>
-                <a href="/edit/{{dbs.id}}/" class="btn btn-primary">Editar</a>
-                <a href="/delete/{{dbs.id}}/" class="btn btn-danger">Deletar</a>
+                <a href="/viewSerie/{{dbs.id}}/" class="btn btn-dark">Visualizar</a>
+                <a href="/editSerie/{{dbs.id}}/" class="btn btn-primary">Editar</a>
+                <a href="/deleteSerie/{{dbs.id}}/" class="btn btn-danger">Deletar</a>
               </td>
             </tr>
             {% endfor %}
           </tbody>
         </table>
         {% load static%}
->>>>>>> 871cdddf09d60b8748d79799a639a1a78d726ff7
     </div>
 </body>
 </html>

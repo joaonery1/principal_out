@@ -9,3 +9,11 @@ class Filmes(models.Model):
     diretor= models.CharField(max_length=100)
     elenco = models.CharField(max_length=100)
     direcao = models.CharField(max_length=100)
+
+class Serie(models.Model):
+    nomeSerie = models.CharField(max_length=150)
+    numEp = models.IntegerField()
+    numTemp = models.IntegerField()
+    produtoraSerie = models.CharField(max_length=50)
+
+    
